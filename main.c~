@@ -1,0 +1,52 @@
+
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
+#include "./stb_image.h"
+
+static void load_image(char *p_file_name, char *p_img_path) {
+    
+    // int height, width, channels;
+    // stbi_set_flip_vertically_on_load(true);
+    // unsigned char *data = stbi_load(p_img_path, &width, &height, &channels, 3);
+    // return data;
+    
+    // FILE *txt_file = NULL;
+    
+    char *txt_ext = ".txt";
+    char *fn = p_file_name;
+    
+    size_t txt_length = strlen(txt_ext);
+    size_t length = strlen(fn);
+    fn = (char *)malloc(length + txt_length + 1);
+    
+    if (fn == NULL) fprintf(stdin, "[ERROR] Could not allocated string correctly. \n");
+    
+    strcat(fn, txt_ext);
+    
+    printf("[INFO] file: %s. \n", fn);
+    
+    // txt_file = fopen("symbols.txt", "a");
+    
+    
+}
+
+char *image_path;
+char *file_name = "";
+
+int main(int argc, char *argv[]) {
+    
+    printf("What will be the name of your filec? \n > ");
+    scanf("%s", file_name);
+    
+    // printf("Where's your image? \n > ");
+    // scanf("%s", image_path);
+    
+    load_image(file_name, image_path);
+    
+    printf("TESTE");
+    
+    return 0;
+}
